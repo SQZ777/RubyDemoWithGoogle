@@ -2,7 +2,7 @@ require 'selenium-cucumber'
 google_page = GOOGLEPAGE.new
 
 Given('I input somethingB') do
-  navigate_to('https://www.google.com/')
+  navigate_to('https://google.com/')
   google_page.input_somethinga
   google_page.clear_something
   google_page.input_somethingb

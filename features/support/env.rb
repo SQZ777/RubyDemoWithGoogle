@@ -43,7 +43,11 @@ if $platform == 'android' or $platform == 'iOS'
   end
 else # else create driver instance for desktop browser
   begin
-    $driver = Selenium::WebDriver.for(:"#{$browser_type}")
+    # Set Language: English
+    # options = Selenium::WebDriver::Chrome::Options.new(args: ['--lang=en'])
+    # Set Language: Japan
+    options = Selenium::WebDriver::Chrome::Options.new(args: ['--lang=ja'])
+    $driver = Selenium::WebDriver.for(:"#{$browser_type}", options: options)
     $driver.manage().window().maximize()
   rescue Exception => e
     puts e.message

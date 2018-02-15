@@ -1,7 +1,7 @@
 
 class GOOGLEPAGE
   XPATHS = {
-    btn: '//*[@name="btnK"]',
+    btn: '//*[@value="Google 搜尋"]',
     textbox: '//*[@name="q"]'
   }.freeze
 
@@ -19,6 +19,7 @@ class GOOGLEPAGE
 
   def click_btn
     is_element_displayed(:xpath, XPATHS[:btn])
+    wait(1)
     click(:xpath, XPATHS[:btn])
   end
 
